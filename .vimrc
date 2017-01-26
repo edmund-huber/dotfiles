@@ -26,3 +26,5 @@ set wildmode=longest,list
 set wildmenu
 
 set backupcopy=yes
+
+syntax on
