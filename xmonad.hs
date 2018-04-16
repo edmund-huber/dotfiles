@@ -1,5 +1,6 @@
 import XMonad
 import XMonad.Hooks.ManageDocks
+import XMonad.Layout.NoBorders
 import XMonad.Util.EZConfig
 import XMonad.Util.Run
 
@@ -8,6 +9,7 @@ main = do
     xssLockProc <- spawnPipe "xss-lock -- xscreensaver-command --lock"
     xmonad $ defaultConfig
         {
+            layoutHook = smartBorders $ layoutHook defaultConfig,
             modMask = mod4Mask
         } `additionalKeysP` [
             ("M-p", spawn "dmenu_run"),
