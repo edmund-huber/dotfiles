@@ -10,14 +10,13 @@ main = do
     xmonad $ defaultConfig
         {
             layoutHook = smartBorders $ layoutHook defaultConfig,
-            modMask = mod4Mask
+            modMask = mod1Mask
         } `additionalKeysP` [
             ("M-p", spawn "dmenu_run"),
             ("M-/", spawn "xscreensaver-command -lock"),
             ("M-w", sendMessage ToggleStruts),
             ("<XF86MonBrightnessDown>", spawn "xbacklight -dec 10"),
             ("<XF86MonBrightnessUp>", spawn "xbacklight -inc 10"),
-            ("<XF86LaunchA>", spawn "/home/ehuber/.xmonad/toggle-keyboard-light"),
             ("<XF86AudioMute>", spawn "amixer set Master toggle"),
             ("<XF86AudioLowerVolume>", spawn "amixer set Master 10%-"),
             ("<XF86AudioRaiseVolume>", spawn "amixer set Master 10%+")
