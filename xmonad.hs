@@ -15,7 +15,6 @@ main = do
         } `additionalKeysP` [
             ("M-p", spawn "dmenu_run"),
             ("M-/", spawn "xscreensaver-command -lock"),
-            ("M-w", sendMessage ToggleStruts),
             ("<XF86MonBrightnessDown>", spawn "xbacklight -dec 10"),
             ("<XF86MonBrightnessUp>", spawn "xbacklight -inc 10"),
             ("<XF86AudioMute>", spawn "amixer set Master toggle"),
