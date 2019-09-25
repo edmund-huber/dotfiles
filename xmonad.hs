@@ -10,7 +10,8 @@ main = do
     xmonad $ defaultConfig
         {
             layoutHook = smartBorders $ layoutHook defaultConfig,
-            modMask = mod1Mask
+            modMask = mod1Mask,
+            startupHook = do spawn "xsetroot -solid black"
         } `additionalKeysP` [
             ("M-p", spawn "dmenu_run"),
             ("M-/", spawn "xscreensaver-command -lock"),
