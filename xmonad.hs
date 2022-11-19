@@ -7,9 +7,9 @@ import XMonad.Util.Run
 main = do
     xscreensaverProc <- spawnPipe "xscreensaver -no-splash"
     xssLockProc <- spawnPipe "xss-lock -- xscreensaver-command --lock"
-    xmonad $ defaultConfig
+    xmonad $ def
         {
-            layoutHook = smartBorders $ layoutHook defaultConfig,
+            layoutHook = smartBorders $ layoutHook def,
             modMask = mod1Mask,
             startupHook = do spawn "xsetroot -solid black"
         } `additionalKeysP` [
