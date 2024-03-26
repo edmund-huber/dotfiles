@@ -1,7 +1,4 @@
 #!/bin/bash
-#
-# battery status script
-#
 
 BATTERY=/sys/class/power_supply/BAT0/
 
@@ -16,8 +13,9 @@ BLD='\033[01m'
 RED='\033[01;31m'
 GRN='\033[01;32m'
 YEL='\033[01;33m'
+BLU='\033[01;34m'
 
-COLOUR="$RED"
+COLOR="$RED"
 
 case "${BATSTATE}" in
    'FULL')
@@ -39,12 +37,12 @@ fi
 
 if [ "$CHARGE" -gt "15" ]
 then
-   COLOUR="$YEL"
+   COLOR="$YEL"
 fi
 
 if [ "$CHARGE" -gt "30" ]
 then
-   COLOUR="$GRN"
+   COLOR="$GRN"
 fi
 
-echo -e "${BATSTT}${COLOUR}${CHARGE}%${NON}"
+echo -e "${BATSTT}${COLOR}${CHARGE}%${NON} \w ${BLU}\$${NON} "
