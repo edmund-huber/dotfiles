@@ -45,4 +45,4 @@ then
    COLOR="$GRN"
 fi
 
-echo -e "${BATSTT}${COLOR}${CHARGE}%${NON} \w ${BLU}\$${NON} "
+echo -e "${BATSTT}${COLOR}${CHARGE}%${NON} $(pwd) ${BLU}\$${NON} "
